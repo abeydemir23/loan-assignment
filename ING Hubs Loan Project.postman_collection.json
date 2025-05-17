@@ -1,0 +1,930 @@
+{
+	"info": {
+		"_postman_id": "181f5574-c223-41f5-9a03-ede8860f1272",
+		"name": "ING Hubs Loan Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42830424"
+	},
+	"item": [
+		{
+			"name": "Customer CRUD",
+			"item": [
+				{
+					"name": "Create Customer",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzOEVfMUVFS0NqZ2lZQTFZT2g0UG5zdFlVLThYTHNaeVgyVUJQcjFHYVlNIn0.eyJleHAiOjE3NDc1MDIyNzAsImlhdCI6MTc0NzUwMTk3MCwianRpIjoiZmI4NzcyZjAtYzMzMS00YjM4LTk0YTgtMGNjZmY3NzI1MzNlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9sb2FuIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjQwNWYxNDIwLTU1MjMtNGMwZC1hNmI0LTgyMDVkMThlZDk1OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImxvYW4tYXBpIiwic2lkIjoiNjQzZTJhNzQtMjRmMy00OTcxLTlkMjctMGZkY2JkNTVkZjlhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLWxvYW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJsb2FuLWFwaSI6eyJyb2xlcyI6WyJjbGllbnRfYWRtaW4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.TFaUGnHKjCop5gMPumFz2zwB2P-_BeiY_d5HL8UiowtktFPkg1Hxd1WkefLAbHS-i_FHAFrqPljlQXUs-qjHCv9FTj1e4Ek0u-e99u8qPNn7ZRF0_G_09ZUHosFfLvvjhHJf1YEpoES2zWbkx_0n-DYocLI910lxdl9_I7UFdHEyEF6wyOWmGEZNDrr0N7_EJpVQvZltgs3xo6voLE4LR1MZ5YTvoFSfL4Tfd_BrKJP0CDg1Z0JgmyBMW3fzZniMs4cHXGXe3vgn0yh_FSvwGYU8QFcGnsOa5G8oaw2GqxGuGh46EisZMRViE-6r0ladj_LtTYlQ_JFZ7IEQxifS0w",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "loan-api",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9090/realms/loan/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Alican\",\r\n    \"surname\": \"Beydemir\",\r\n    \"creditLimit\": 1000000,\r\n    \"usedCreditLimit\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Customers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzOEVfMUVFS0NqZ2lZQTFZT2g0UG5zdFlVLThYTHNaeVgyVUJQcjFHYVlNIn0.eyJleHAiOjE3NDc1MDIyNzAsImlhdCI6MTc0NzUwMTk3MCwianRpIjoiZmI4NzcyZjAtYzMzMS00YjM4LTk0YTgtMGNjZmY3NzI1MzNlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9sb2FuIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjQwNWYxNDIwLTU1MjMtNGMwZC1hNmI0LTgyMDVkMThlZDk1OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImxvYW4tYXBpIiwic2lkIjoiNjQzZTJhNzQtMjRmMy00OTcxLTlkMjctMGZkY2JkNTVkZjlhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLWxvYW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJsb2FuLWFwaSI6eyJyb2xlcyI6WyJjbGllbnRfYWRtaW4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.TFaUGnHKjCop5gMPumFz2zwB2P-_BeiY_d5HL8UiowtktFPkg1Hxd1WkefLAbHS-i_FHAFrqPljlQXUs-qjHCv9FTj1e4Ek0u-e99u8qPNn7ZRF0_G_09ZUHosFfLvvjhHJf1YEpoES2zWbkx_0n-DYocLI910lxdl9_I7UFdHEyEF6wyOWmGEZNDrr0N7_EJpVQvZltgs3xo6voLE4LR1MZ5YTvoFSfL4Tfd_BrKJP0CDg1Z0JgmyBMW3fzZniMs4cHXGXe3vgn0yh_FSvwGYU8QFcGnsOa5G8oaw2GqxGuGh46EisZMRViE-6r0ladj_LtTYlQ_JFZ7IEQxifS0w",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "loan-api",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9090/realms/loan/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Customer By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzOEVfMUVFS0NqZ2lZQTFZT2g0UG5zdFlVLThYTHNaeVgyVUJQcjFHYVlNIn0.eyJleHAiOjE3NDc1MDIyNzAsImlhdCI6MTc0NzUwMTk3MCwianRpIjoiZmI4NzcyZjAtYzMzMS00YjM4LTk0YTgtMGNjZmY3NzI1MzNlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9sb2FuIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjQwNWYxNDIwLTU1MjMtNGMwZC1hNmI0LTgyMDVkMThlZDk1OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImxvYW4tYXBpIiwic2lkIjoiNjQzZTJhNzQtMjRmMy00OTcxLTlkMjctMGZkY2JkNTVkZjlhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLWxvYW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJsb2FuLWFwaSI6eyJyb2xlcyI6WyJjbGllbnRfYWRtaW4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.TFaUGnHKjCop5gMPumFz2zwB2P-_BeiY_d5HL8UiowtktFPkg1Hxd1WkefLAbHS-i_FHAFrqPljlQXUs-qjHCv9FTj1e4Ek0u-e99u8qPNn7ZRF0_G_09ZUHosFfLvvjhHJf1YEpoES2zWbkx_0n-DYocLI910lxdl9_I7UFdHEyEF6wyOWmGEZNDrr0N7_EJpVQvZltgs3xo6voLE4LR1MZ5YTvoFSfL4Tfd_BrKJP0CDg1Z0JgmyBMW3fzZniMs4cHXGXe3vgn0yh_FSvwGYU8QFcGnsOa5G8oaw2GqxGuGh46EisZMRViE-6r0ladj_LtTYlQ_JFZ7IEQxifS0w",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "loan-api",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9090/realms/loan/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/customers/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customers",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer By Id",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzOEVfMUVFS0NqZ2lZQTFZT2g0UG5zdFlVLThYTHNaeVgyVUJQcjFHYVlNIn0.eyJleHAiOjE3NDc1MDIyNzAsImlhdCI6MTc0NzUwMTk3MCwianRpIjoiZmI4NzcyZjAtYzMzMS00YjM4LTk0YTgtMGNjZmY3NzI1MzNlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9sb2FuIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjQwNWYxNDIwLTU1MjMtNGMwZC1hNmI0LTgyMDVkMThlZDk1OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImxvYW4tYXBpIiwic2lkIjoiNjQzZTJhNzQtMjRmMy00OTcxLTlkMjctMGZkY2JkNTVkZjlhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLWxvYW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJsb2FuLWFwaSI6eyJyb2xlcyI6WyJjbGllbnRfYWRtaW4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.TFaUGnHKjCop5gMPumFz2zwB2P-_BeiY_d5HL8UiowtktFPkg1Hxd1WkefLAbHS-i_FHAFrqPljlQXUs-qjHCv9FTj1e4Ek0u-e99u8qPNn7ZRF0_G_09ZUHosFfLvvjhHJf1YEpoES2zWbkx_0n-DYocLI910lxdl9_I7UFdHEyEF6wyOWmGEZNDrr0N7_EJpVQvZltgs3xo6voLE4LR1MZ5YTvoFSfL4Tfd_BrKJP0CDg1Z0JgmyBMW3fzZniMs4cHXGXe3vgn0yh_FSvwGYU8QFcGnsOa5G8oaw2GqxGuGh46EisZMRViE-6r0ladj_LtTYlQ_JFZ7IEQxifS0w",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "loan-api",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9090/realms/loan/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Alican Kamil\",\r\n    \"surname\": \"Beydemir\",\r\n    \"creditLimit\": 1000000,\r\n    \"usedCreditLimit\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/customers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer By Id",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzOEVfMUVFS0NqZ2lZQTFZT2g0UG5zdFlVLThYTHNaeVgyVUJQcjFHYVlNIn0.eyJleHAiOjE3NDc1MDIyNzAsImlhdCI6MTc0NzUwMTk3MCwianRpIjoiZmI4NzcyZjAtYzMzMS00YjM4LTk0YTgtMGNjZmY3NzI1MzNlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9sb2FuIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjQwNWYxNDIwLTU1MjMtNGMwZC1hNmI0LTgyMDVkMThlZDk1OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImxvYW4tYXBpIiwic2lkIjoiNjQzZTJhNzQtMjRmMy00OTcxLTlkMjctMGZkY2JkNTVkZjlhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLWxvYW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJsb2FuLWFwaSI6eyJyb2xlcyI6WyJjbGllbnRfYWRtaW4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.TFaUGnHKjCop5gMPumFz2zwB2P-_BeiY_d5HL8UiowtktFPkg1Hxd1WkefLAbHS-i_FHAFrqPljlQXUs-qjHCv9FTj1e4Ek0u-e99u8qPNn7ZRF0_G_09ZUHosFfLvvjhHJf1YEpoES2zWbkx_0n-DYocLI910lxdl9_I7UFdHEyEF6wyOWmGEZNDrr0N7_EJpVQvZltgs3xo6voLE4LR1MZ5YTvoFSfL4Tfd_BrKJP0CDg1Z0JgmyBMW3fzZniMs4cHXGXe3vgn0yh_FSvwGYU8QFcGnsOa5G8oaw2GqxGuGh46EisZMRViE-6r0ladj_LtTYlQ_JFZ7IEQxifS0w",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "loan-api",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9090/realms/loan/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/customers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Loan CRUD",
+			"item": [
+				{
+					"name": "Create Loan",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzOEVfMUVFS0NqZ2lZQTFZT2g0UG5zdFlVLThYTHNaeVgyVUJQcjFHYVlNIn0.eyJleHAiOjE3NDc1MDIyNzAsImlhdCI6MTc0NzUwMTk3MCwianRpIjoiZmI4NzcyZjAtYzMzMS00YjM4LTk0YTgtMGNjZmY3NzI1MzNlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9sb2FuIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjQwNWYxNDIwLTU1MjMtNGMwZC1hNmI0LTgyMDVkMThlZDk1OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImxvYW4tYXBpIiwic2lkIjoiNjQzZTJhNzQtMjRmMy00OTcxLTlkMjctMGZkY2JkNTVkZjlhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLWxvYW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJsb2FuLWFwaSI6eyJyb2xlcyI6WyJjbGllbnRfYWRtaW4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.TFaUGnHKjCop5gMPumFz2zwB2P-_BeiY_d5HL8UiowtktFPkg1Hxd1WkefLAbHS-i_FHAFrqPljlQXUs-qjHCv9FTj1e4Ek0u-e99u8qPNn7ZRF0_G_09ZUHosFfLvvjhHJf1YEpoES2zWbkx_0n-DYocLI910lxdl9_I7UFdHEyEF6wyOWmGEZNDrr0N7_EJpVQvZltgs3xo6voLE4LR1MZ5YTvoFSfL4Tfd_BrKJP0CDg1Z0JgmyBMW3fzZniMs4cHXGXe3vgn0yh_FSvwGYU8QFcGnsOa5G8oaw2GqxGuGh46EisZMRViE-6r0ladj_LtTYlQ_JFZ7IEQxifS0w",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "loan-api",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9090/realms/loan/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 2,\r\n    \"amount\": 100000,\r\n    \"interestRate\": 0.5,\r\n    \"installments\":6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/loans",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"loans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Loan By Customer Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzOEVfMUVFS0NqZ2lZQTFZT2g0UG5zdFlVLThYTHNaeVgyVUJQcjFHYVlNIn0.eyJleHAiOjE3NDc1MDIyNzAsImlhdCI6MTc0NzUwMTk3MCwianRpIjoiZmI4NzcyZjAtYzMzMS00YjM4LTk0YTgtMGNjZmY3NzI1MzNlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9sb2FuIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjQwNWYxNDIwLTU1MjMtNGMwZC1hNmI0LTgyMDVkMThlZDk1OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImxvYW4tYXBpIiwic2lkIjoiNjQzZTJhNzQtMjRmMy00OTcxLTlkMjctMGZkY2JkNTVkZjlhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLWxvYW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJsb2FuLWFwaSI6eyJyb2xlcyI6WyJjbGllbnRfYWRtaW4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.TFaUGnHKjCop5gMPumFz2zwB2P-_BeiY_d5HL8UiowtktFPkg1Hxd1WkefLAbHS-i_FHAFrqPljlQXUs-qjHCv9FTj1e4Ek0u-e99u8qPNn7ZRF0_G_09ZUHosFfLvvjhHJf1YEpoES2zWbkx_0n-DYocLI910lxdl9_I7UFdHEyEF6wyOWmGEZNDrr0N7_EJpVQvZltgs3xo6voLE4LR1MZ5YTvoFSfL4Tfd_BrKJP0CDg1Z0JgmyBMW3fzZniMs4cHXGXe3vgn0yh_FSvwGYU8QFcGnsOa5G8oaw2GqxGuGh46EisZMRViE-6r0ladj_LtTYlQ_JFZ7IEQxifS0w",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "loan-api",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9090/realms/loan/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/loans/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"loans",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Installments By Loan Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzOEVfMUVFS0NqZ2lZQTFZT2g0UG5zdFlVLThYTHNaeVgyVUJQcjFHYVlNIn0.eyJleHAiOjE3NDc1MDIyNzAsImlhdCI6MTc0NzUwMTk3MCwianRpIjoiZmI4NzcyZjAtYzMzMS00YjM4LTk0YTgtMGNjZmY3NzI1MzNlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9sb2FuIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjQwNWYxNDIwLTU1MjMtNGMwZC1hNmI0LTgyMDVkMThlZDk1OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImxvYW4tYXBpIiwic2lkIjoiNjQzZTJhNzQtMjRmMy00OTcxLTlkMjctMGZkY2JkNTVkZjlhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLWxvYW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJsb2FuLWFwaSI6eyJyb2xlcyI6WyJjbGllbnRfYWRtaW4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.TFaUGnHKjCop5gMPumFz2zwB2P-_BeiY_d5HL8UiowtktFPkg1Hxd1WkefLAbHS-i_FHAFrqPljlQXUs-qjHCv9FTj1e4Ek0u-e99u8qPNn7ZRF0_G_09ZUHosFfLvvjhHJf1YEpoES2zWbkx_0n-DYocLI910lxdl9_I7UFdHEyEF6wyOWmGEZNDrr0N7_EJpVQvZltgs3xo6voLE4LR1MZ5YTvoFSfL4Tfd_BrKJP0CDg1Z0JgmyBMW3fzZniMs4cHXGXe3vgn0yh_FSvwGYU8QFcGnsOa5G8oaw2GqxGuGh46EisZMRViE-6r0ladj_LtTYlQ_JFZ7IEQxifS0w",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "loan-api",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9090/realms/loan/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 1,\r\n    \"amount\": 100000,\r\n    \"interestRate\": 0.5,\r\n    \"installments\":6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/installments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"installments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pay Installment",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzOEVfMUVFS0NqZ2lZQTFZT2g0UG5zdFlVLThYTHNaeVgyVUJQcjFHYVlNIn0.eyJleHAiOjE3NDc1MDIyNzAsImlhdCI6MTc0NzUwMTk3MCwianRpIjoiZmI4NzcyZjAtYzMzMS00YjM4LTk0YTgtMGNjZmY3NzI1MzNlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9sb2FuIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjQwNWYxNDIwLTU1MjMtNGMwZC1hNmI0LTgyMDVkMThlZDk1OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImxvYW4tYXBpIiwic2lkIjoiNjQzZTJhNzQtMjRmMy00OTcxLTlkMjctMGZkY2JkNTVkZjlhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLWxvYW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJsb2FuLWFwaSI6eyJyb2xlcyI6WyJjbGllbnRfYWRtaW4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.TFaUGnHKjCop5gMPumFz2zwB2P-_BeiY_d5HL8UiowtktFPkg1Hxd1WkefLAbHS-i_FHAFrqPljlQXUs-qjHCv9FTj1e4Ek0u-e99u8qPNn7ZRF0_G_09ZUHosFfLvvjhHJf1YEpoES2zWbkx_0n-DYocLI910lxdl9_I7UFdHEyEF6wyOWmGEZNDrr0N7_EJpVQvZltgs3xo6voLE4LR1MZ5YTvoFSfL4Tfd_BrKJP0CDg1Z0JgmyBMW3fzZniMs4cHXGXe3vgn0yh_FSvwGYU8QFcGnsOa5G8oaw2GqxGuGh46EisZMRViE-6r0ladj_LtTYlQ_JFZ7IEQxifS0w",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "loan-api",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9090/realms/loan/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"loanId\":\"1\",\r\n    \"amount\": 0\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Token-User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "user",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "user",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "loan-api",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "admin",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9090/realms/loan/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"realms",
+						"loan",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Token-Admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response is ok\",  ()=>{\r",
+							"    pm.response.to.have.status(200)\r",
+							"})\r",
+							"\r",
+							"var jsonData = JSON.parse(responseBody);\r",
+							"\r",
+							"pm.collectionVariables.set(\"admin-token\", jsonData.access_token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "loan-api",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "admin",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9090/realms/loan/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"realms",
+						"loan",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "ADMIN_TOKEN",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzOEVfMUVFS0NqZ2lZQTFZT2g0UG5zdFlVLThYTHNaeVgyVUJQcjFHYVlNIn0.eyJleHAiOjE3NDc1MDIxMzUsImlhdCI6MTc0NzUwMTgzNSwianRpIjoiZTU4MDUyMTktOWExZC00NTI0LWFhNDgtZmNmMWJmMTBjNjY4IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9sb2FuIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjQwNWYxNDIwLTU1MjMtNGMwZC1hNmI0LTgyMDVkMThlZDk1OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImxvYW4tYXBpIiwic2lkIjoiNDRkODg1MzEtMDY1MS00OTZmLTkwOGQtNmViZjI4YmNmMTA2IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLWxvYW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJsb2FuLWFwaSI6eyJyb2xlcyI6WyJjbGllbnRfYWRtaW4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.chEEygvLdoj_vYMkB6ZEdP5jwhlAU7DDYFqRqOsQYD69cCMqKI_a7_12v1Ik0L9vkEZc_wbQ140cCs4IoFJsMHVnkiumNB2ZwQ_JR7oOLlmZc4C8MO8s8xjfOpGl_S7dPyYLoBlkfGYsdP1IZwPhLX0ilpWbJvRY4PtH9ZYzcEu83zAcAYRhKu1y5teCImS41FvBr0z-9-GFAu7IwyT05G797ZvdDcFBUppGNd_yrxrAPO-jk9Y26hWTKJrKaffflFwGeAf_mh8lzHH3NOUxGrrS6K7cdtWF-2MRIeVCuUIGupYWSWTOCe5zwX4-X7CCqvK3E87ZaHHvV8gIAHa2LA",
+			"type": "default"
+		},
+		{
+			"key": "admin-token",
+			"value": ""
+		}
+	]
+}
