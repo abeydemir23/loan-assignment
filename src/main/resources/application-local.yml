@@ -1,0 +1,29 @@
+jwt:
+  auth:
+    converter:
+      principle-attribute: admin
+      resource-id: loan-api
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: keycloak
+    url: jdbc:postgresql://localhost:5432/loandb
+    hikari:
+      auto-commit: 'false'
+    password: 123456
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  application:
+    name: loanapp
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/loan
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs

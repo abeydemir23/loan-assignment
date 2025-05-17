@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: db
+    image: postgres:14
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: loandb
+    volumes:
+      - kc-db:/var/lib/postgressql/data
+
+  keycloak:
+    container_name: kc_current
+    image: quay.io/keycloak/keycloak:25.0.2
+    command:
+      - "start-dev"
+      - "--import-realm"
+      - "--http-port=9090"
+    environment:
+      KEYCLOAK_IMPORT: /opt/keycloak/data/imports/realm-export.json
+      DB_VENDOR: postgres
+      DB_ADDR: postgres
+      DB_PORT: "5432"
+      DB_DATABASE: keycloak
+      DB_USER: keycloak
+      DB_PASSWORD: 123456
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - "9090:9090"
+    depends_on:
+      - postgres
+    volumes:
+      - ./imports/realm-export.json:/opt/keycloak/imports/realm-export.json
+
+  loan-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+      - keycloak
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/loandb
+      - SPRING_DATASOURCE_USERNAME=keycloak
+      - SPRING_DATASOURCE_PASSWORD=123456
+
+
+volumes:
+  kc-db:
+  kc-db-all:
+
+
+
+
