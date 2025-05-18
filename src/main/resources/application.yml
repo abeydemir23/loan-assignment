@@ -1,8 +1,8 @@
 jwt:
   auth:
     converter:
-      principle-attribute: preferred_username
-      resource-id: springboot-keycloak-demo-client
+      principle-attribute: admin
+      resource-id: loan-api
 server:
   port: 8080
 spring:
